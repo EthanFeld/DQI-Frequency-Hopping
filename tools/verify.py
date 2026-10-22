@@ -41,7 +41,8 @@ def verify():
         assert (PROJECT/name).stat().st_size<=UPLOAD_FILE_LIMIT,('Upload file exceeds 2 MB',name)
     extras=[path.relative_to(PROJECT).as_posix() for path in PROJECT.rglob('*')
             if path.is_file() and '__pycache__' not in path.parts and path.suffix!='.pyc'
-            and path.relative_to(PROJECT).as_posix() not in (FILES|PUBLISH_ONLY_FILES)]
+            and '.git' not in path.relative_to(PROJECT).parts
+            and path.relative_to(PROJECT).as_posix() not in (set(FILES)|PUBLISH_ONLY_FILES)]
     assert not extras,('Unexpected project files',extras)
     bank=read_json('data/checkcode_results.json');audit=read_json('data/checkcode_audit.json')
     javascript=(PROJECT/'data/checkcode_results.js').read_text(encoding='utf-8-sig')
