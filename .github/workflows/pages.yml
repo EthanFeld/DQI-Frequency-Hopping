@@ -28,12 +28,12 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Assemble static evidence demo
-        run: python tools/build_pages.py _site
+        run: python tools/build_pages.py "${RUNNER_TEMP}/dqi-pages-site"
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: _site
+          path: ${{ runner.temp }}/dqi-pages-site
 
       - name: Deploy Pages site
         id: deployment
