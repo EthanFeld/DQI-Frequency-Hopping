@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "checked_utc": "2026-10-11T21:04:38.513974+00:00",
+  "native_outputs": 65536,
+  "fixtures": 16,
+  "native_amplitudes_checked": 16777216,
+  "classical_outputs_rescored": 16384,
+  "native_state_max_error": 1.3402574981062033e-11,
+  "maximum_workspace_probability": 6.60260272856349e-19,
+  "independent_classical_bound": "47/62",
+  "source_hashes_verified": true,
+  "all_raw_scores_verified": true,
+  "scope_flags_verified": true,
+  "native_mean": 0.7890446980794277,
+  "instance_cluster_ci95": [
+    0.7861150132374919,
+    0.7919743829213635
+  ],
+  "evidence_sha256": "ce75aa183dbefb1288da97a8852f6bc716e1501f3e1adefa4eb9efd7461f175e"
+}
